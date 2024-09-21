@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        section {
+            display: grid;
+            grid-template-columns: 100px 1fr; /* Sidebar width set to 100px */
+            grid-template-rows: auto 1fr; /* First row for header, second for content */
+            min-height: 100dvh;
+            background: rgb(5, 5, 11);
+        }
+        .div1 {
+            grid-row: 1 / span 2; /* Sidebar spans both rows */
+            color: white;
+            padding: 10px;
+            border: 1px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .div2 {
+            grid-row: 1; /* First row for the header */
+            grid-column: 2; /* Second column for header */
+            background: white;
+            color: black;
+            padding: 10px 20px; /* Padding for header */
+            border: 1px solid rgb(4, 4, 13);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div3 {
+            grid-row: 2; /* Second row for the main content */
+            grid-column: 2; /* Second column for main content */
+            background: white;
+            color: black;
+            padding: 20px; /* Padding around the content */
+            border: 1px solid rgb(4, 4, 13);
+            display: flex;
+            flex-direction: row; /* Change to column for vertical stacking */
+            gap: 100px; /* Space between items */
+        }
+        .div4 {
+            grid-row: 2; /* Align with main content */
+            grid-column: 2; /* Same column as div3 */
+            background: white; /* Same background */
+            color: black; /* Same text color */
+            padding: 20px; /* Consistent padding */
+            border: 1px solid rgb(4, 4, 13); /* Same border */
+            display: flex;
+            align-items: center; /* Center vertically */
+            margin-top: 15px; /* Space between div3 and div4 */
+        }
+        .div4 img {
+            margin-right: 15px; /* Space between the image and text */
+            max-width: 50px; /* Set a max width for the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .div5 {
+            /* If you want to style the fifth div, add styles here */
+        }
+        .div1 img {
+            margin: 5px 0; /* Spacing between images */
+            max-width: 100%; /* Ensure images are responsive */
+        }
+        .last-image {
+            margin-top: auto; /* Push this image to the bottom */
+        }
+        .logo {
+            transition: transform 0.2s linear; /* Smooth transition */
+            width: 70px; /* Set logo width */
+            height: 50px; /* Set logo height */
+        }
+        .logo:hover {
+            transform: rotate(90deg); /* Rotate on hover */
+        }
+        .left {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+            font-size: x-large;
+            margin: 0; /* Remove default margin */
+        }
+        .profile {
+            width: 100px; /* Set a fixed width for the profile image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .div3 a {
+            position: relative; /* For positioning the pseudo-element */
+            text-decoration: none; /* Remove default underline */
+            color: inherit; /* Inherit color from parent */
+        }
+        .div3 a::after {
+            content: ""; /* Create a pseudo-element */
+            position: absolute;
+            left: 50%; /* Start from the center */
+            bottom: 0; /* Position at the bottom */
+            width: 0; /* Start with no width */
+            height: 2px; /* Set the height of the underline */
+            background: black; /* Color of the underline */
+            transition: width 0.3s ease, left 0.3s ease; /* Animation */
+        }
+        .div3 a:hover::after {
+            width: 100%; /* Full width on hover */
+            left: 0; /* Move to the left */
+        }
+    </style>
+</head>
+<body>
+
+<section class="section1">
+    <div class="div1">
+        <img src="/images/State=Default.png" alt="Logo" class="logo">
+        <a href="#"><img src="/images/team_dashboard (1).png" alt="Dashboard"></a>
+        <a href="#"><img src="/images/draft.png" alt="Draft"></a>
+        <a href="#"><img src="/images/folder.png" alt="Folder"></a>
+        <a href="#"><img src="/images/calendar_month.png" alt="Calendar"></a>
+        <a href="#"><img src="/images/chat.png" alt="Chat"></a>
+        <a href="#"><img src="/images/brightness_empty.png" alt="Brightness"></a>
+        <a href="#"><img class="last-image" src="/images/logout.png" alt="Logout"></a>
+    </div>
+    <div class="div2">
+        <h1 class="left">Courses</h1>
+        <a href="#"><img src="/images/Profile.png" alt="Profile" class="profile"></a>
+    </div>
+    <div class="div3">
+        <a href="#"><h3>All</h3></a>
+        <a href="#"><h3>Advertising</h3></a>
+        <a href="#"><h3>Design</h3></a>
+        <a href="#"><h3>Marketing</h3></a>
+        <a href="#"><h3>Illustration</h3></a>
+        <a href="#"><h3>Brand</h3></a>
+    </div>
+    <div class="div4">
+        <img src="/images/html.png" alt="HTML Icon" width="400px" height="350px">
+        <span>HTML Icon Description</span>
+    </div>
+    <div class="div5"></div>
+</section>
+
+</body>
+</html>
+
+
+
+
